@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Ember Connection-Aware Media Component</h1>
+<p>This addon uses the Network Information API to make use of the effective connection types</p>
+{{ca-media
+  highResImage=highResImage
+  lowResImage=lowResImage
+  oggVideo=oggVideo
+  webmVideo=webmVideo
+  alt="Tomster The Ember Mascot"
+  autoUpdate=true
+}}
+<p class="caption">Effection Connection Type: <strong>{{connectionType}}</strong></p>
 
-{{outlet}}
