@@ -12,11 +12,18 @@ This addon gives you a component "ca-media" which is a network connection-aware 
 making use of the latest Network Information API provided by the browser.
 At present, Chrome is the only browser that supports this api.
 
+Based on the effective connection type, this component serves different media resources like below:
+
+- 2g => low resolution images
+- 3g => high resolution images
+- 4g => video
+- offline => Placeholder content
+
 There is also a blog post [here](http://hangaroundtheweb.com/2018/08/creating-connection-aware-ember-media-components/) defining how the component is created from scratch and how
 it works.
 
 ## Demo
-Please find the demo for this addon [here](https://rajasegar.github.io/connection-aware-ember/).
+Please find the demo for this addon [here](https://rajasegar.github.io/connection-aware-ember/) which works only in Chrome.
 
 ## Usage
 
