@@ -12,15 +12,6 @@ module('Integration | Component | ca-media-placeholder', function(hooks) {
 
     await render(hbs`{{ca-media-placeholder}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#ca-media-placeholder}}
-        template block text
-      {{/ca-media-placeholder}}
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '(Image currently not available)');
   });
 });

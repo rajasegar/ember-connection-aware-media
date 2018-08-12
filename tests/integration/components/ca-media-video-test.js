@@ -21,6 +21,6 @@ module('Integration | Component | ca-media-video', function(hooks) {
       {{/ca-media-video}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

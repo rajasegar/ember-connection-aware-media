@@ -16,11 +16,9 @@ module('Integration | Component | ca-media-image', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      {{#ca-media-image}}
-        template block text
-      {{/ca-media-image}}
+      {{ca-media-image alt="Tomster" imageSrc="https://raw.githubusercontent.com/rajasegar/connection-aware-ember/master/public/assets/img/Tomster-Logo-lowRes.png"}}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });

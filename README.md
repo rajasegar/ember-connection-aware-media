@@ -19,8 +19,8 @@ Based on the effective connection type, this component serves different media re
 - 4g => video
 - offline => Placeholder content
 
-There is also a blog post [here](http://hangaroundtheweb.com/2018/08/creating-connection-aware-ember-media-components/) defining how the component is created from scratch and how
-it works.
+There is also a blog post [here](http://hangaroundtheweb.com/2018/08/creating-connection-aware-ember-media-components/) 
+defining how the component is created from scratch and how it works.
 
 ## Demo
 Please find the demo for this addon [here](https://rajasegar.github.io/connection-aware-ember/) which works only in Chrome.

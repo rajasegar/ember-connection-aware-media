@@ -36,7 +36,6 @@ export default Component.extend({
     // check connection type before first render.
     if (this.hasNetworkInfoSupport()) {
       const connectionType = navigator.onLine ? navigator.connection.effectiveType : 'offline';
-      console.log(connectionType); // eslint-disable-line
       this.set('connectionType', connectionType);
     }
   },
