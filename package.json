@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "An Ember Connection-Aware Media Component addon using the Network Information API.",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "media",
+    "image",
+    "video",
+    "placeholder",
+    "network"
   ],
   "license": "MIT",
   "author": "Rajasegar Chandran",
@@ -15,7 +20,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "ember test",
+    "deploy": "npm version patch && git push && git push --tags && npm publish"
   },
   "dependencies": {
     "ember-cli-babel": "^6.16.0",
