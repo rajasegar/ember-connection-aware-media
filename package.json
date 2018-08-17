@@ -16,7 +16,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/rajasegar/ember-connection-aware-media",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
