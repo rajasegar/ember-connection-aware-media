@@ -1,17 +1,23 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | ca-media-placeholder', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`{{ca-media-placeholder}}`);
-
-    assert.equal(this.element.textContent.trim(), '(Image currently not available)');
+  hooks.beforeEach(async function() {
+    await render(hbs`{{ca-media-placeholder alt="Tomster"}}`);
   });
+
+  test('should have placeholder element', async function(assert) {
+    assert.ok(find('.placeholder'));
+  });
+
+  test('should have proper alt text ', async function(assert) {
+    let captionEl = find('.placeholder__caption');
+    assert.equal(captionEl.textContent.trim(), 'Tomster');
+  });
+
+
 });

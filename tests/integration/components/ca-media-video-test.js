@@ -1,26 +1,36 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | ca-media-video', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  hooks.beforeEach(async function() {
+    await render(hbs`{{ca-media-video alt="Tomster" ogg="sample.ogg" webm="sample.webm"}}`);
+  });
 
-    await render(hbs`{{ca-media-video}}`);
+  test('should have a video element', function(assert) {
+    assert.ok(find('video'));
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
+  test('should have a video element with preload=true', function(assert) {
+    assert.equal(find('video').getAttribute('preload'), 'true');
+  });
 
-    // Template block usage:
-    await render(hbs`
-      {{#ca-media-video}}
-        template block text
-      {{/ca-media-video}}
-    `);
+  test('should have a video element with controls=true', function(assert) {
+    assert.equal(find('video').getAttribute('controls'), 'true');
+  });
 
-    assert.equal(this.element.textContent.trim(), '');
+  test('should have a video element with proper alt text', function(assert) {
+    assert.equal(find('video').getAttribute('alt'), 'Tomster');
+  });
+
+  test('should have a source element of type ogg', function(assert) {
+    assert.ok(find('source[type="video/ogg"]'));
+  });
+
+  test('should have a source element of type webm', function(assert) {
+    assert.ok(find('source[type="video/webm"]'));
   });
 });
