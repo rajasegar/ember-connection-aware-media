@@ -1,6 +1,6 @@
 {
   "name": "ember-connection-aware-media",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An Ember Connection-Aware Media Component addon using the Network Information API.",
   "keywords": [
     "ember-addon",
